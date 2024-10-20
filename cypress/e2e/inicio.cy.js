@@ -10,6 +10,6 @@ describe('Página Inicial', () => {
     })
 
     it('Deve renderizar corretamente o texto da seção de vantagens', () => {
-        cy.get('h2').contains('Vantagens do nosso banco:')
+        cy.verificaTexto('h2', 'Vantagens do nosso banco:')
     })
 })
