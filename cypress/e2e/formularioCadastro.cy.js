@@ -10,6 +10,7 @@ describe('Formulário de Cadastro', () => {
         cy.getByData('senha-input').type('senha123')
         cy.getByData('checkbox-input').check()
         cy.getByData('botao-enviar').click()
+
         cy.getByData('mensagem-sucesso')
             .should('exist')
             .and('have.text', 'Usuário cadastrado com sucesso!')
