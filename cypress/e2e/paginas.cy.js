@@ -7,10 +7,13 @@ describe('Testando múltiplas páginas', () => {
         cy.getByData('senha-input').type('senha123')
         cy.getByData('botao-enviar').click()
 
-        cy.getByData('app-home').find('a').eq(1).click()
+        cy.location('pathname').should('equal', '/home')
 
+        cy.getByData('app-home').find('a').eq(1).click()
         cy.getByData('titulo-cartoes')
             .should('exist')
             .and('have.text', 'Meus cartões')
+
+        cy.location('pathname').should('equal', '/home/cartoes')
     })
 })
